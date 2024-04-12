@@ -51,7 +51,7 @@ def Readfiche(post_id):
 
 # exercice
 
-@app.route('/fiche_nom/<int:post_name>')
+@app.route('/fiche_nom/<str:post_name>')
 def Readfiche(post_name):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
