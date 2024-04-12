@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'enregistrement d'un nouveau livre</title>
+</head>
+<body>
+    <h1>Enregistrer un nouveau livre</h1>
+    <form action="./enregistrer_client" method="POST">
+        <label for="Titre">Titre :</label>
+        <input type="text" id="Titre" name="Titre" required><br><br>
+        <label for="Auteur">Auteur :</label>
+        <input type="text" id="Auteur" name="Auteur" required><br><br>
+        <label for="Annee_de_publication">Annee_de_publication :</label>
+        <input type="text" id="Annee_de_publication" name="Annee_de_publication" required><br><br>
+        <label for="Genre">Genre :</label>
+        <input type="text" id="Genre" name="Genre" required><br><br>
+        <label for="Nombre_exemplaires_disponibles">Nombre_exemplaires_disponibles :</label>
+        <input type="text" id="Nombre_exemplaires_disponibles" name="Nombre_exemplaires_disponibles" required><br><br>
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>
