@@ -1,7 +1,7 @@
 -- Table Livres
 DROP TABLE IF EXISTS Livres;
 CREATE TABLE Livres (
-    ID_Livre INT PRIMARY KEY AUTOINCREMENT,
+    ID_Livre INTEGER PRIMARY KEY AUTOINCREMENT,
     Titre VARCHAR(255),
     Auteur VARCHAR(255),
     Annee_de_publication INT,
@@ -12,7 +12,7 @@ CREATE TABLE Livres (
 -- Table Utilisateurs
 DROP TABLE IF EXISTS Utilisateurs;
 CREATE TABLE Utilisateurs (
-    ID_Utilisateur INT PRIMARY KEY AUTOINCREMENT,
+    ID_Utilisateur INTEGER PRIMARY KEY AUTOINCREMENT,
     Nom VARCHAR(100),
     Prenom VARCHAR(100),
     Adresse_email VARCHAR(255),
@@ -23,7 +23,7 @@ CREATE TABLE Utilisateurs (
 -- Table Emprunts
 DROP TABLE IF EXISTS Emprunts;
 CREATE TABLE Emprunts (
-    ID_Emprunt INT PRIMARY KEY AUTOINCREMENT,
+    ID_Emprunt INTEGER PRIMARY KEY AUTOINCREMENT,
     ID_Utilisateur INT,
     ID_Livre INT,
     Date_Emprunt DATE,
@@ -36,7 +36,7 @@ CREATE TABLE Emprunts (
 -- Table Stocks (Facultatif)
 DROP TABLE IF EXISTS Stocks;
 CREATE TABLE Stocks (
-    ID_Stock INT PRIMARY KEY AUTOINCREMENT,
+    ID_Stock INTEGER PRIMARY KEY AUTOINCREMENT,
     ID_Livre INT,
     Date_Ajout DATE,
     Date_Suppression DATE,
