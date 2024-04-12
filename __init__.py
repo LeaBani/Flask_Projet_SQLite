@@ -40,7 +40,7 @@ def authentification():
         elif request.form['username'] == 'user' and request.form['password'] == '1234': # password à cacher par la suite
             session['authentifieUser'] = True
             # Rediriger vers la route lecture après une authentification réussie
-            return redirect(url_for('lecture'))
+            return redirect(url_for('read_data.html'))
         else:
             # Afficher un message d'erreur si les identifiants sont incorrects
             return render_template('formulaire_authentification.html', error=True)
