@@ -52,7 +52,7 @@ def Readfiche(post_id):
 # exercice
 
 @app.route('/fiche_nom/<post_nom>')
-def Readfiche(post_nom):
+def ReadficheName(post_nom):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM clients WHERE nom = ?', (post_nom,))
