@@ -73,6 +73,28 @@ def ReadficheName(post_nom):
         # Rendre le template HTML et transmettre les données
         return render_template('read_data.html', data=data)
 
+@app.route('/ajout_livre', methods=['GET'])
+def form_book():
+    return render_template('formulaire_book.html')  # afficher le formulaire
+    
+@app.route('/ajout_livre', methods=['GET', 'POST'])
+def add_book():
+    title = request.form['Titre']
+    author = request.form['Auteur']
+    year = request.form['Annee_de_publication']
+    gender = request.form['Genre']
+    qty = request.form['Nombre_exemplaires_disponibles']
+    
+    # Connexion à la base de données
+    conn = sqlite3.connect('database2.db')
+    cursor = conn.cursor()
+
+    # Exécution de la requête SQL pour insérer un nouveau client
+    cursor.execute('INSERT INTO Livres (Titre, Auteur, Annee_de_publication, Genre, Nombre_exemplaires_disponibles) VALUES (?, ?, ?, ?, ?)', (title, author, year, gender, qty))
+    conn.commit()
+    conn.close()
+    return redirect('/livres/')  # Rediriger vers la page d'accueil après l'enregistrement
+
 @app.route('/consultation/')
 def ReadBDD():
     conn = sqlite3.connect('database.db')
